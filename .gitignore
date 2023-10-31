@@ -1,0 +1,19 @@
+# IDE
+.idea/
+
+# virtualenv
+venv/
+
+# build and run artefacts
+__pycache__/
+build/
+src/FileTranslator.egg-info/
+**/*.logs
+
+# dev
+utils/
+src/FileTranslator/LocalUtils
+src/FileTranslator/play.py
+
+# other
+tmp/

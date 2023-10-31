@@ -1,0 +1,8 @@
+include src/FileTranslator/.is_release
+graft src/FileTranslator/data
+graft src/FileTranslator/LocalUtils
+
+recursive-exclude src/FileTranslator/LocalUtils *
+
+# also removed from git
+exclude src/FileTranslator/.logs

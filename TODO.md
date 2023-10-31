@@ -1,0 +1,6 @@
+- [ ] Smart OCR
+- [ ] Offline translator.
+- [ ] GUI.
+- [ ] Autodetect language.
+- [ ] Add license to source code.
+- [ ] Ability to specify individual pages for translation.

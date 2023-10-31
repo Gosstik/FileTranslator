@@ -1,0 +1,66 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "FileTranslator"
+version = "1.0.0"
+authors = [
+    {name = "Egor Vashkevich", email = "vashkevich.es@phystech.edu"}
+]
+description = "Program to translate files"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "LICENSE"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+]
+dependencies = [
+    "pdf2image",
+    "Pillow",
+    "selenium",
+    "pytesseract",
+    "regex",
+    "pycountry",
+    "PyPDF4"
+#    importlib-metadata; python_version<"3.7"; platform_system=='Linux'
+]
+
+################################################################################
+
+[tool.setuptools.packages.find]
+where = ["src"]  # ["."] by default
+namespaces = false  # true by default
+
+[tool.setuptools]
+include-package-data = true
+zip_safe = false
+
+################################################################################
+
+[project.scripts]
+translate_file = "FileTranslator.CLI:main"
+
+################################################################################
+
+[tool.isort]
+profile = "google"
+line_length = 80
+src_paths = ["src", "tests"]
+known_first_party = ["FileTranslator"]
+sections = ['FUTURE', 'STDLIB', 'THIRDPARTY', 'FIRSTPARTY', 'LOCALFOLDER']
+
+################################################################################
+
+[tool.black]
+line-length = 80
+target-version = ['py310']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+    .git,
+    __pycache__,
+    build,
+    venv
+)/
+'''
